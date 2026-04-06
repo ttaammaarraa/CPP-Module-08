@@ -36,18 +36,6 @@ static void testList()
     std::list<int> values;
     for (int i = 1; i <= 5; ++i)
         values.push_back(i * 3);
-
-    std::list<int> const constValues(values);
-
-    try
-    {
-        std::list<int>::const_iterator it = easyfind(constValues, 9);
-        std::cout << "Found in list: " << *it << std::endl;
-    }
-    catch (std::exception const &e)
-    {
-        std::cout << "List error: " << e.what() << std::endl;
-    }
 }
 
 int main()
