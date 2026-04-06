@@ -1,5 +1,3 @@
-#pragma once
-
 #include <stack>
 
 template<typename T>
