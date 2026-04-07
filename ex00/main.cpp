@@ -33,9 +33,29 @@ static void testVector()
 
 static void testList()
 {
+    std::cout << "\n--- Testing List ---" << std::endl;
     std::list<int> values;
     for (int i = 1; i <= 5; ++i)
-        values.push_back(i * 3);
+        values.push_back(i * 3); // {3, 6, 9, 12, 15}
+
+    try
+    {
+        std::list<int>::iterator it = easyfind(values, 12);
+        std::cout << "Found in list: " << *it << std::endl;
+    }
+    catch (std::exception const &e)
+    {
+        std::cout << "List error: " << e.what() << std::endl;
+    }
+
+    try
+    {
+        easyfind(values, 100);
+    }
+    catch (std::exception const &e)
+    {
+        std::cout << "List error: " << e.what() << std::endl;
+    }
 }
 
 int main()
